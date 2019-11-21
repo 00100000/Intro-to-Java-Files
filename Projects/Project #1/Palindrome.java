@@ -15,7 +15,7 @@ public class Palindrome
             System.out.println("Please enter any word or sentence and we'll tell you if it's a palindrome or not!");
             String userInput = scan.nextLine();
 
-            System.out.println("Your word/sentence backwards is " + reverseString(userInput));
+            System.out.println("Your word/sentence backwards is: " + reverseString(userInput));
             boolean palindrome = isPalindrome(userInput);
             
             if (palindrome = true) {
@@ -43,9 +43,14 @@ public class Palindrome
         return finalMessage;
     }
     public static boolean isPalindrome(String str) {
-        String callReverseString = reverseString(str);
+        String finalMessage = "";
 
-        if (callReverseString.equalsIgnoreCase("str")) {
+        for (int index = str.length() - 1; index >= 0; index--) {
+            char messageChar = str.charAt(index);
+            finalMessage += messageChar;
+        }
+
+        if (finalMessage.equalsIgnoreCase("str")) {
             return true;
         } else {
             return false;
