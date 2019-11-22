@@ -49,7 +49,7 @@ public class Palindrome
             finalMessage += messageChar;
         }
 
-        if (finalMessage.equalsIgnoreCase("str")) {
+        if (finalMessage.equalsIgnoreCase(str)) {
             return true;
         } else {
             return false;
