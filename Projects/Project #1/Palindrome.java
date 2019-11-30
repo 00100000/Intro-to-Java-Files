@@ -2,34 +2,34 @@
 *
 * Reverses a string and returns if it's a palindrome or not
 */
-import java.util.Scanner; //imports the scanner utility
 
-public class Main
+import javax.swing.JOptionPane; //imports JOptionPane
+
+public class Palindrome
 {
     public static void main (String[] args) //main method
     {
         int againOrExit = 1;
         do { //user controlled exit loop
-            Scanner scan = new Scanner(System.in);
 
-            System.out.println("Please enter any word and we'll tell you if it's a palindrome or not!");
-            String userInput = scan.nextLine();
+            String userInput = JOptionPane.showInputDialog("Please enter any word and we'll tell you if it's a palindrome or not!");
 
-            System.out.println("Your word backwards is: " + reverseString(userInput));
+            String reversedString = "Your word backwards is: " + reverseString(userInput);
             boolean palindrome = isPalindrome(userInput);
             
             if (palindrome == true) { //outputs if a word is a palindrome or not
-                System.out.println("Your word is a palindrome!");
+                JOptionPane.showMessageDialog(null, reversedString + "Your word is a palindrome!");
             } else {
-                System.out.println("Your word is NOT a palindrome!");
+                JOptionPane.showMessageDialog(null, reversedString + "Your word is NOT a palindrome!");
             }
 
-            System.out.println("Type 1 to re-run the program. Type 2 to exit the program.");
-            againOrExit = scan.nextInt();
+            String againOrExitInput = JOptionPane.showInputDialog("Type 1 to re-run the program. Type 2 to exit the program.");
+            againOrExit = Integer.parseInt(againOrExitInput);
+            
         } while (againOrExit == 1); //user controlled exit loop
         
         if (againOrExit == 2) {
-            System.out.println("Thank you for using my program <3");
+            JOptionPane.showMessageDialog(null, "Thank you for using my program <3");
         }
     }
     public static String reverseString(String str) { //returns a reversed string
