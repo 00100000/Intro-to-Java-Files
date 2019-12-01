@@ -7,7 +7,7 @@ import javax.swing.JOptionPane; //imports JOptionPane
 
 public class Palindrome
 {
-    public static void main (String[] args) //main method
+    public static void main (String[] args)
     {
         int againOrExit = 1;
         do { //user controlled exit loop
