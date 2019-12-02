@@ -69,6 +69,7 @@ create a new line on finalMessage
 finalMessage = finalMessage + charAt
 
 )
+
 )
 
 say “--------------------”
