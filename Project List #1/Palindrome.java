@@ -3,7 +3,7 @@
 * Reverses a string and returns if it's a palindrome or not
 */
 
-import javax.swing.JOptionPane; //imports JOptionPane
+import javax.swing.JOptionPane;
 
 public class Palindrome
 {
@@ -18,9 +18,9 @@ public class Palindrome
             boolean palindrome = isPalindrome(userInput);
             
             if (palindrome == true) { //outputs if a word is a palindrome or not
-                JOptionPane.showMessageDialog(null, reversedString + "Your word is a palindrome!");
+                JOptionPane.showMessageDialog(null, reversedString + ". Your word is a palindrome!");
             } else {
-                JOptionPane.showMessageDialog(null, reversedString + "Your word is NOT a palindrome!");
+                JOptionPane.showMessageDialog(null, reversedString + ". Your word is NOT a palindrome!");
             }
 
             String againOrExitInput = JOptionPane.showInputDialog("Type 1 to re-run the program. Type 2 to exit the program.");
