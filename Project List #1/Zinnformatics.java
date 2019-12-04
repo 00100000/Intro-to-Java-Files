@@ -3,7 +3,7 @@
 * Calculates the prices and discounts for a web design software
 */
 
-import javax.swing.JOptionPane; //imports JOptionPane
+import javax.swing.JOptionPane;
 
 public class Zinnformatics
 {
