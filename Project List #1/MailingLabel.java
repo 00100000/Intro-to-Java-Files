@@ -16,7 +16,7 @@ public class MailingLabel
 
         //prints final label
         System.out.println("----------------------------");
-        System.out.println(mailingLabel(finalMessage, delimeter););
+        System.out.println(mailingLabel(finalMessage, delimeter));
         System.out.println("----------------------------");
         }
     public static String mailingLabel(String str, String del) { //returns a string with the delimeters representing a new line
