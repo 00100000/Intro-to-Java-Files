@@ -15,14 +15,15 @@ public class CozaLozaWoza
         JOptionPane.showMessageDialog(null, cozaLozaWoza(userInput));
     }
     public static String cozaLozaWoza(int n) {
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i < n; i++) {
             if (i % 3 == 0) {
-                return "Coza";
+                return "Coza ";
             } else if (i % 5 == 0) {
-                return "Loza";
+                return "Loza ";
             } else if (i % 7 == 0) {
-                return "Woza";
-            }
+                return "Woza ";
+            } else {
+                return "" + i ;
         }
     }
 }
