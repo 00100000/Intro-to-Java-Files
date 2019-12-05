@@ -16,31 +16,32 @@ public class CozaLozaWoza
     }
     public static String cozaLozaWoza(int n) { //replaces numbers divisible by 3, 5, and 7 with coza, loza, and woza respectively
         boolean divisible;
+        String finalMessage = "";
         
         //loops to check the divisibility of numbers
         for (int i = 1; i <= n; i++) {
-            divisible = false;
+            divisible = true;
 
             if (i % 3 == 0) {
-                return "Coza";
-                divisible = true;
+                finalMessage = finalMessage + "Coza ";
+                divisible = false;
             }
             if (i % 5 == 0) {
-                return "Loza";
-                divisible = true;
+                finalMessage = finalMessage + "Loza ";
+                divisible = false;
             }
             if (i % 7 == 0) {
-                return "Woza";
-                divisible = true;
+                finalMessage = finalMessage + "Woza ";
+                divisible = false;
             }
             if (divisible == false) {
-                return "" + i;
+                finalMessage = finalMessage + i + " ";
             }
             if (i % 11 == 0) {
                 return System.lineSeparator();
             }
         }
-        //necessary return statement
-        return "";
+        //returns final message
+        return finalMessage;
     }
 }
