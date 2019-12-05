@@ -9,21 +9,38 @@ public class CozaLozaWoza
 {
     public static void main (String[] args)
     {
-        String userInputString = JOptionPane.showInputDialog("Please input an integer.");
+        String userInputString = JOptionPane.showInputDialog("Please input an integer."); //gets user input
         int userInput = Integer.parseInt(userInputString);
 
-        JOptionPane.showMessageDialog(null, cozaLozaWoza(userInput));
+        JOptionPane.showMessageDialog(null, cozaLozaWoza(userInput)); //final output
     }
-    public static String cozaLozaWoza(int n) {
-        for (int i = 1; i < n; i++) {
+    public static String cozaLozaWoza(int n) { //replaces numbers divisible by 3, 5, and 7 with coza, loza, and woza respectively
+        boolean divisible;
+        
+        //loops to check the divisibility of numbers
+        for (int i = 1; i <= n; i++) {
+            divisible = false;
+
             if (i % 3 == 0) {
-                return "Coza ";
-            } else if (i % 5 == 0) {
-                return "Loza ";
-            } else if (i % 7 == 0) {
-                return "Woza ";
-            } else {
-                return "" + i ;
+                return "Coza";
+                divisible = true;
+            }
+            if (i % 5 == 0) {
+                return "Loza";
+                divisible = true;
+            }
+            if (i % 7 == 0) {
+                return "Woza";
+                divisible = true;
+            }
+            if (divisible == false) {
+                return "" + i;
+            }
+            if (i % 11 == 0) {
+                return System.lineSeparator();
+            }
         }
+        //necessary return statement
+        return "";
     }
 }
