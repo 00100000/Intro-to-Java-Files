@@ -16,18 +16,26 @@ public class CozaLozaWoza
     }
     public static String cozaLozaWoza(int n) { //replaces numbers divisible by 3, 5, and 7 with coza, loza, and woza respectively
       String nothing = "";
+      String x = "";
         
         //loops to check the divisibility of numbers
         for (int i = 1; i <= n; i++) {
+          boolean divisible = false;
 
             if (i % 3 == 0) {
-                System.out.print(" Coza");
-            } else if (i % 5 == 0) {
-                System.out.print(" Loza");
-            } else if (i % 7 == 0) {
-                System.out.print(" Woza");
-            } else {
-                System.out.print(" " + i);
+                System.out.print("Coza");
+                divisible = true;
+            }
+            if (i % 5 == 0) {
+                System.out.print("Loza");
+                divisible = true;
+            }
+            if (i % 7 == 0) {
+                System.out.print("Woza");
+                divisible = true;
+            }
+            if (divisible == false) {
+                System.out.print(i);
             }
             if (i % 11 == 0) {
                 System.out.println();
