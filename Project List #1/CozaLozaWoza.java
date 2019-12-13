@@ -9,10 +9,18 @@ public class CozaLozaWoza
 {
     public static void main (String[] args)
     {
-        String userInputString = JOptionPane.showInputDialog("Please input an integer."); //gets user input
-        int userInput = Integer.parseInt(userInputString);
+      int exitCondition = JOptionPane.NO_OPTION;
+      //user controlled exit loop
+      do {
+        
+         String userInputString = JOptionPane.showInputDialog("Please input an integer."); //gets user input
+         int userInput = Integer.parseInt(userInputString);
 
-        JOptionPane.showMessageDialog(null, cozaLozaWoza(userInput)); //final output
+         JOptionPane.showMessageDialog(null, cozaLozaWoza(userInput)); //final output
+         JOptionPane.showConfirmDialog(null, "Do you want to rerun the program?");
+         
+      } while (exitCondition == JOptionPane.YES_OPTION);
+          //user controlled exit loop
     }
     public static String cozaLozaWoza(int n) { //replaces numbers divisible by 3, 5, and 7 with coza, loza, and woza respectively
       String x = "";
