@@ -9,9 +9,10 @@ public class MailingLabel
 {
     public static void main (String[] args)
     {
-      int exitCondition = JOptionPane.YES_OPTION;
+      int exitCondition = JOptionPane.NO_OPTION;
       //user controlled exit loop
       do {
+        
           //gets user input
           String delimeter = JOptionPane.showInputDialog("Please enter a delimeter for your mailing address.");
 
@@ -23,7 +24,8 @@ public class MailingLabel
           System.out.println("----------------------------");
         
           JOptionPane.showConfirmDialog(null, "Do you want to rerun the program?");
-          } while (exitCondition == JOptionPane.YES_OPTION);
+          
+       } while (exitCondition == JOptionPane.YES_OPTION);
           //user controlled exit loop
           if (exitCondition == JOptionPane.NO_OPTION) {
             JOptionPane.showMessageDialog(null, "Goodbye!");
