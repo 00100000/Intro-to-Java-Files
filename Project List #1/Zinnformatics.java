@@ -20,14 +20,15 @@ public class Zinnformatics
       
       int discountToPercent = (int)(discount(amount) * 100);
       //final output
-      JOptionPane.showMessageDialog(null, "Thank you for your order " + name + "! You have ordered " + amount + " packages, at a " + discountToPercent + "% discount. Your final cost will be $" + zinnformatics(amount) + ".");
+      JOptionPane.showMessageDialog(null, "Thank you for your order " + name + "! You have ordered " + amount + " packages, at a "
+                                      + discountToPercent + "% discount. Your final cost will be $" + zinnformatics(amount) + "0");
       //user input for controlled exit
       exitCondition = JOptionPane.showConfirmDialog(null, "Do you want to rerun the program?");
     } while (exitCondition == 0);
     //user controlled exit loop
   }
   public static double zinnformatics(int quantity) { //returns cost
-    double finalCost = (quantity * 99) * discount(quantity);
+    double finalCost = (quantity * 99) * (1 - discount(quantity));
     return finalCost;
   }
   public static double discount(int quantity) { //return decimal value, not percent
