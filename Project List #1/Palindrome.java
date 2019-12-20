@@ -10,7 +10,7 @@ public class Palindrome
   public static void main (String[] args)
   {
     int exitCondition = JOptionPane.NO_OPTION;
-    //user controlled exit loop
+    //user controlled exit loop start
     do {
       String userInput = JOptionPane.showInputDialog("Please enter any word and we'll tell you if it's a palindrome or not!");
       
@@ -45,7 +45,7 @@ public class Palindrome
       finalMessage += messageChar;
     }
     
-    if (finalMessage.equalsIgnoreCase(str)) { //checks string against itself
+    if (finalMessage.equals(str)) { //checks string against itself
       return true;
     } else {
       return false;
