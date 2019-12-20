@@ -22,7 +22,7 @@ public class MailingLabel
       System.out.println(mailingLabel(finalMessage, delimeter));
       System.out.println("----------------------------");
       
-      exitCondition = JOptionPane.showConfirmDialog(null, "Do you want to rerun the program?");
+      exitCondition = JOptionPane.showConfirmDialog                                                          (null, "Do you want to rerun the program?");
       
     } while (exitCondition == 0);
     //user controlled exit loop
