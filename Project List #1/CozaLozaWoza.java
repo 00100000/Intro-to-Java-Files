@@ -14,6 +14,12 @@ public class CozaLozaWoza
     do {
       String userInputString = JOptionPane.showInputDialog("Please input an integer."); //gets user input
       int userInput = Integer.parseInt(userInputString);
+      
+      if (userInput < 1) {
+        JOptionPane.showMessageDialog(null, "Please enter an integer greater than 0.");
+        userInputString = JOptionPane.showInputDialog("Please input an integer."); //gets user input
+        userInput = Integer.parseInt(userInputString);
+      }
 
       JOptionPane.showMessageDialog(null, cozaLozaWoza(userInput)); //final output
       JOptionPane.showConfirmDialog(null, "Do you want to rerun the program?");
