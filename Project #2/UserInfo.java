@@ -63,10 +63,10 @@ public class UserInfo {
             middle2 = s.subString(s.length() / 2, (s.length() / 2) + 2);
             body2 = s.subString((s.length() / 2) + 2, s.length() - 1);
         } else {
-            body1 =
-            middle1 = s.subString(0, (s.length() / 2) + 1);
-            middle2 = s.subString((s.length() / 2) + 1, s.length() - 1);
-            body2 =
+            body1 = s.subString(0, (s.length() / 2) - 1);
+            middle1 = s.subString((s.length() / 2) - 1), s.length() / 2 + 1);
+            middle2 = s.subString(s.length() / 2 + 1, (s.length() / 2) + 3);
+            body2 = s.subString((s.length() / 2) + 3, s.length() - 1);
         }
         
         return body1 + middle2 + middle1 + body2;
