@@ -35,5 +35,17 @@ public class UserInfo {
         s.replaceAll(" ", "_");
     }
     public String swapHalfsForEncrypt(String s) {
+        String firstHalf = s.subString(0, s.length() / 2);
+        String secondHalf = s.subString(s.length() / 2, s.length() - 1);
+        
+        return secondHalf + firstHalf;
     }
+    public String swapFirst2WithLast2(String s) {
+        String body = s.subString(2,  s.length() - 3);
+        String first2 = s.subString(0, 1);
+        String last2 = s.subString(s.length() - 2, s.length() - 1);
+        
+        return last2 + body + first2;
+    }
+    
 }
