@@ -58,11 +58,15 @@ public class UserInfo {
         String body1, body2, middle1, middle2;
         
         if ((s.length() + 1) % 2 == 0) {
-            middle1 = s.subString(0, s.length() / 2);
-            secondHalf = s.subString(s.length() / 2, s.length() - 1);
+            body1 = s.subString(0, (s.length() / 2) - 2);
+            middle1 = s.subString((s.length() / 2) - 2), s.length() / 2);
+            middle2 = s.subString(s.length() / 2, (s.length() / 2) + 2);
+            body2 = s.subString((s.length() / 2) + 2, s.length() - 1);
         } else {
-            firstHalf = s.subString(0, (s.length() / 2) + 1);
-            secondHalf = s.subString((s.length() / 2) + 1, s.length() - 1);
+            body1 =
+            middle1 = s.subString(0, (s.length() / 2) + 1);
+            middle2 = s.subString((s.length() / 2) + 1, s.length() - 1);
+            body2 =
         }
         
         return body1 + middle2 + middle1 + body2;
