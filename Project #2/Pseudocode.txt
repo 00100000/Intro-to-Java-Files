@@ -1,15 +1,15 @@
- encrypt s (
+  encrypt s 
  removeWhitespaceAndCovertToUpper s
  substitute s
  swapHalfsForEncrypt s
  swapFirst2WithLast2 s
  swapMiddleChars s
- )
- removeWhitespaceAndCovertToUpper s (
+ 
+ removeWhitespaceAndCovertToUpper s 
  trim s
  s toUpperCase
- )
- substitute s (
+ 
+ substitute s 
  replace "A" with "@”
  replace "E" with "="
  replace “I" with "!”
@@ -22,41 +22,39 @@
  replace “V" with "^"
  replace "X" with "%"
  replace " " with "_"
- )
- swapHalfsForEncrypt s (
+ 
+ swapHalfsForEncrypt s 
   variable firstHalf, secondHalf
  
- if get the length plus 1 modulus 2 equals 0 (
- firstHalf equals get the sub variable 0, get the length divided by 2 
- secondHalf equals get the sub variable get the length divided by 2, get the length minus 1 
- ) else (
- firstHalf equals get the sub variable 0, get the length divided by 2 plus 1 
- secondHalf equals get the sub variable get the length divided by 2 plus 1, get the length minus 1 
- )
+ if get the length plus 1 modulus 2 equals 0 
+ firstHalf equals get the substring of s 0, get the length divided by 2 
+ secondHalf equals get the substring of s get the length divided by 2, get the length minus 1 
+  else 
+ firstHalf equals get the substring of s 0, get the length divided by 2 plus 1 
+ secondHalf equals get the substring of s get the length divided by 2 plus 1, get the length minus 1 
+ 
  
  output secondHalf plus firstHalf
- )
- swapFirst2WithLast2 s (
-  variable body equals get the sub variable 2, get the length minus 3 
-  variable first2 equals get the sub variable 0, 1 
-  variable last2 equals get the sub variable get the length minus 2, get the length minus 1 
+ 
+ swapFirst2WithLast2 s 
+  variable body equals get the substring of s 2, get the length minus 3 
+  variable first2 equals get the substring of s 0, 1 
+  variable last2 equals get the substring of s get the length minus 2, get the length minus 1 
  
  output last2 plus body plus first2
- )
- swapMiddleChars s (
+ 
+ swapMiddleChars s 
   variable body1, body2, middle1, middle2
  
- if get the length plus 1 modulus 2 equals 0 (
- body1 equals get the sub variable 0, get the length divided by 2 minus 2 
- middle1 equals get the sub variable get the length divided by 2 minus 2 , get the length divided by 2 
- middle2 equals get the sub variable get the length divided by 2, get the length divided by 2 plus 2 
- body2 equals get the sub variable get the length divided by 2 plus 2, get the length minus 1 
- ) else (
- body1 equals get the sub variable 0, get the length divided by 2 minus 1 
- middle1 equals get the sub variable get the length divided by 2 minus 1 , get the length divided by 2 plus 1 
- middle2 equals get the sub variable get the length divided by 2 plus 1, get the length divided by 2 plus 3 
- body2 equals get the sub variable get the length divided by 2 plus 3, get the length minus 1 
- )
+ if get the length plus 1 modulus 2 equals 0 
+ body1 equals get the substring of s 0, get the length divided by 2 minus 2 
+ middle1 equals get the substring of s get the length divided by 2 minus 2 , get the length divided by 2 
+ middle2 equals get the substring of s get the length divided by 2, get the length divided by 2 plus 2 
+ body2 equals get the substring of s get the length divided by 2 plus 2, get the length minus 1 
+  else 
+ body1 equals get the substring of s 0, get the length divided by 2 minus 1 
+ middle1 equals get the substring of s get the length divided by 2 minus 1 , get the length divided by 2 plus 1 
+ middle2 equals get the substring of s get the length divided by 2 plus 1, get the length divided by 2 plus 3 
+ body2 equals get the substring of s get the length divided by 2 plus 3, get the length minus 1 
+ 
  output body1 plus middle2 plus middle1 plus body2
- )
-)
