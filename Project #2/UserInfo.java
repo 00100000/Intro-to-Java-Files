@@ -7,30 +7,16 @@
   **********************************************************/
 
 //@TODO:
-// - CHANGE THE METHODS TO NON-STATIC METHODS AFTER TESTING
-// - DELETE ALL COMMENTS
+// - User exit loop
+// - JOptionPane (move to driver file)
+// - Driver file
 
 import javax.swing.JOptionPane;
 
 public class UserInfo {
-    //private String name, address, username, password;
-
-    public static void main (String[]args) {
-        String x = "HAMANDCHEESER";
-      /*
-        name = JOptionPane.showInputDialog("Please Enter Your Name");
-        address = JOptionPane.showInputDialog("Please Enter Your Address");
-        username = JOptionPane.showInputDialog("Please Enter Your Username");
-        password = encrypt(JOptionPane.showInputDialog("Please Enter Your Password"));
-      */
-        //System.out.println(encrypt(x));
-        System.out.println(removeWhitespaceAndConvertToUpper(x));
-        System.out.println(substitute(x));
-        System.out.println(swapHalfsForEncrypt(x));
-        //System.out.println(swapFirst2WithLast2(x));
-        //System.out.println(swapMiddleChars(x));
-    }
-    /* public String encrypt(String s) {
+  private String name, address, username, password;
+  
+    public String encrypt(String s) {
         s = removeWhitespaceAndConvertToUpper(s);
         s = substitute(s);
         s = swapHalfsForEncrypt(s);
@@ -38,14 +24,14 @@ public class UserInfo {
         s = swapMiddleChars(s);
         
         return s;
-    } */
-    public static String removeWhitespaceAndConvertToUpper(String s) {
+    }
+    public String removeWhitespaceAndConvertToUpper(String s) {
         s = s.trim();
         s = s.toUpperCase();
         
         return s;
     }
-    public static String substitute(String s) {
+    public String substitute(String s) {
         s = s.replace("A", "@");
         s = s.replace("E", "=");
         s = s.replace("I", "!");
@@ -61,18 +47,18 @@ public class UserInfo {
         
         return s;
     }
-    public static String swapHalfsForEncrypt(String s) {
+    public String swapHalfsForEncrypt(String s) {
         String firstHalf, secondHalf;
         
         firstHalf = s.substring(0, s.length() / 2);
         secondHalf = s.substring(s.length() / 2, s.length());
         
         return secondHalf + firstHalf;
-    } /*
+    }
     public String swapFirst2WithLast2(String s) {
-        String body = s.subString(2,  s.length() - 3);
-        String first2 = s.subString(0, 1);
-        String last2 = s.subString(s.length() - 2, s.length() - 1);
+        String body = s.substring(2,  s.length() - 2);
+        String first2 = s.substring(0, 2);
+        String last2 = s.substring(s.length() - 2, s.length());
         
         return last2 + body + first2;
     }
@@ -80,17 +66,17 @@ public class UserInfo {
         String body1, body2, middle1, middle2;
         
         if (s.length() % 2 == 0) {
-            body1 = s.subString(0, (s.length() / 2) - 2);
-            middle1 = s.subString((s.length() / 2) - 2, s.length() / 2);
-            middle2 = s.subString(s.length() / 2, (s.length() / 2) + 2);
-            body2 = s.subString((s.length() / 2) + 2, s.length() - 1);
+            body1 = s.substring(0, (s.length() / 2) - 2);
+            middle1 = s.substring((s.length() / 2) - 2, s.length() / 2);
+            middle2 = s.substring(s.length() / 2, (s.length() / 2) + 2);
+            body2 = s.substring((s.length() / 2) + 2, s.length());
         } else {
-            body1 = s.subString(0, s.length() / 2 - 1);
-            middle1 = s.subString(s.length() / 2 - 1, s.length() / 2 + 1);
-            middle2 = s.subString(s.length() / 2 + 1, (s.length() / 2) + 3);
-            body2 = s.subString((s.length() / 2) + 3, s.length() - 1);
+            body1 = s.substring(0, (s.length() / 2) - 1);
+            middle1 = s.substring((s.length() / 2) - 1, s.length() / 2 + 1);
+            middle2 = s.substring(s.length() / 2 + 1, (s.length() / 2) + 3);
+            body2 = s.substring((s.length() / 2) + 3, s.length());
         }
         
         return body1 + middle2 + middle1 + body2;
-    } */
+    }
 }
