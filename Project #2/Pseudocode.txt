@@ -1,60 +1,68 @@
-  encrypt s 
- removeWhitespaceAndCovertToUpper s
- substitute s
- swapHalfsForEncrypt s
- swapFirst2WithLast2 s
- swapMiddleChars s
- 
- removeWhitespaceAndCovertToUpper s 
- trim s
- s toUpperCase
- 
- substitute s 
- replace "A" with "@”
- replace "E" with "="
- replace “I" with "!”
- replace “J" with "?"
- replace "O" with "*"
- replace "P" with "#"
- replace “R" with "&"
- replace "S" with "$"
- replace "T" with "+”
- replace “V" with "^"
- replace "X" with "%"
- replace " " with "_"
- 
- swapHalfsForEncrypt s 
-  variable firstHalf, secondHalf
- 
- if get the length plus 1 modulus 2 equals 0 
- firstHalf equals get the substring of s 0, get the length divided by 2 
- secondHalf equals get the substring of s get the length divided by 2, get the length minus 1 
-  else 
- firstHalf equals get the substring of s 0, get the length divided by 2 plus 1 
- secondHalf equals get the substring of s get the length divided by 2 plus 1, get the length minus 1 
- 
- 
- output secondHalf plus firstHalf
- 
- swapFirst2WithLast2 s 
-  variable body equals get the substring of s 2, get the length minus 3 
-  variable first2 equals get the substring of s 0, 1 
-  variable last2 equals get the substring of s get the length minus 2, get the length minus 1 
- 
- output last2 plus body plus first2
- 
- swapMiddleChars s 
-  variable body1, body2, middle1, middle2
- 
- if get the length plus 1 modulus 2 equals 0 
- body1 equals get the substring of s 0, get the length divided by 2 minus 2 
- middle1 equals get the substring of s get the length divided by 2 minus 2 , get the length divided by 2 
- middle2 equals get the substring of s get the length divided by 2, get the length divided by 2 plus 2 
- body2 equals get the substring of s get the length divided by 2 plus 2, get the length minus 1 
-  else 
- body1 equals get the substring of s 0, get the length divided by 2 minus 1 
- middle1 equals get the substring of s get the length divided by 2 minus 1 , get the length divided by 2 plus 1 
- middle2 equals get the substring of s get the length divided by 2 plus 1, get the length divided by 2 plus 3 
- body2 equals get the substring of s get the length divided by 2 plus 3, get the length minus 1 
- 
- output body1 plus middle2 plus middle1 plus body2
+    encrypt String s  {
+        removeWhitespaceAndCovertToUpper s  
+        substitute s  
+        swapHalfsForEncrypt s  
+        swapFirst2WithLast2 s  
+        swapMiddleChars s
+
+        return s
+    }
+     removeWhitespaceAndCovertToUpper String s  {
+        trim s
+        toUpperCase s
+
+        return s
+    }
+     substitute String s  {
+        replaceAll "A"  with "@"  
+        replaceAll "E"  with "="  
+        replaceAll "I"  with "!"  
+        replaceAll "J"  with "?"  
+        replaceAll "O"  with "*"  
+        replaceAll "P"  with "#"  
+        replaceAll "R"  with "&"  
+        replaceAll "S"  with "$"  
+        replaceAll "T"  with "+"  
+        replaceAll "V"  with "^"  
+        replaceAll "X"  with "%"  
+        replaceAll " "  with "_"
+
+        return s
+    }
+     swapHalfsForEncrypt String s  {
+        String firstHalf, secondHalf 
+        
+        if length is even {
+            firstHalf = subString (0, length / 2)
+            secondHalf = subString (length / 2, length - 1)
+        } else {
+            firstHalf = subString (0, length / 2  + 1)
+            secondHalf = subString (length / 2  + 1, length - 1)
+        }
+        
+        return secondHalf + firstHalf 
+    }
+     swapFirst2WithLast2 String s {
+        String body = subString (2,  length - 3)
+        String first2 = subString (0, 1)
+        String last2 = subString (length - 2, length - 1)
+        
+        return last2 + body + first2 
+    }
+     swapMiddleChars String s  {
+        String body1, body2, middle1, middle2 
+        
+        if length is even {
+            body1 = subString (0, length / 2  - 2)
+            middle1 = subString  (length / 2  - 2 , length / 2)
+            middle2 = subString (length / 2,  length / 2  + 2)
+            body2 = subString  (length / 2  + 2, length - 1)
+        } else {
+            body1 = subString (0,  length   / 2  - 1)
+            middle1 = subString  (length   / 2  - 1 , length   / 2 + 1)
+            middle2 = subString (length   / 2 + 1,  length   / 2  + 3)
+            body2 = subString  (length   / 2  + 3, length   - 1)
+        }
+        
+        return body1 + middle2 + middle1 + body2 
+    }
