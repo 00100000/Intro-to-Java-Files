@@ -6,12 +6,12 @@
         swapMiddleChars s
 
         return s
-    
+
      removeWhitespaceAndCovertToUpper String s
         trim s
         toUpperCase s
 
-        return s
+        return s;
         
      substitute String s
         replace "A"  with "@"  
