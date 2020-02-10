@@ -54,8 +54,8 @@ public class UserInfo {
         //splits a string into 2 pieces and returns the halves swapped
         String firstHalf, secondHalf;
         
-        firstHalf = s.substring(0, s.length() / 2);
-        secondHalf = s.substring(s.length() / 2, s.length());
+        firstHalf = s.substring(0, s.length() + 1 / 2);
+        secondHalf = s.substring(s.length() + 1 / 2, s.length());
         
         return secondHalf + firstHalf;
     }
@@ -71,18 +71,11 @@ public class UserInfo {
         //splits a string into 4 pieces and swaps the second and third pieces
         String body1, body2, middle1, middle2;
         
-        if (s.length() % 2 == 0) {
             //checks for odd/even string lengths
-            body1 = s.substring(0, (s.length() / 2) - 2);
-            middle1 = s.substring((s.length() / 2) - 2, s.length() / 2);
-            middle2 = s.substring(s.length() / 2, (s.length() / 2) + 2);
-            body2 = s.substring((s.length() / 2) + 2, s.length());
-        } else {
-            body1 = s.substring(0, (s.length() / 2) - 1);
-            middle1 = s.substring((s.length() / 2) - 1, s.length() / 2 + 1);
-            middle2 = s.substring(s.length() / 2 + 1, (s.length() / 2) + 3);
-            body2 = s.substring((s.length() / 2) + 3, s.length());
-        }
+            body1 = s.substring(0, (s.length() + 1 / 2) - 2);
+            middle1 = s.substring((s.length() + 1 / 2) - 2, s.length() / 2);
+            middle2 = s.substring(s.length() + 1 / 2, (s.length() / 2) + 2);
+            body2 = s.substring((s.length() + 1 / 2) + 2, s.length());
         
         return body1 + middle2 + middle1 + body2;
     }
