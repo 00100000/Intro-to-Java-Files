@@ -15,7 +15,7 @@ public class MailingLabel
       //gets user input
       String delimiter = JOptionPane.showInputDialog("Please enter a delimiter for your mailing address.");
       
-      String finalMessage = JOptionPane.showInputDialog("Please enter your final message with delimiters to seperate different lines.");
+      String finalMessage = JOptionPane.showInputDialog("Please enter your final message with delimiters to separate different lines.");
       
       //prints final label
       System.out.println("----------------------------");
