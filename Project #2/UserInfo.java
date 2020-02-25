@@ -1,21 +1,44 @@
-/*********************************************************
-  * 
-  * UserInfo.java           Author: Aidan Din
-  * 
-  * Gets a user's information and encrypted password.
-  * 
-  **********************************************************/
+//
+// UserInfoDriver.java           Author: Aidan Din
+//
+// Encrypt methods and set and get methods.
+//
 
 public class UserInfo {
     private String name, address, username, password;
 
-    public User() {
+    public UserInfo() {
         name = "";
         address = "";
         username = "";
         password = "";
     }
-  
+    //get and set methods
+    public void setName(String n) {
+      name = n;
+    }
+    public void setAddress(String a) {
+      address = a;
+    }
+    public void setUsername(String u) {
+      username = u;
+    }
+    public void setPassword(String p) {
+      password = encrypt(p);
+    }
+    public String getName() {
+      return name;
+    }
+    public String getAddress() {
+      return address;
+    }
+    public String getUsername() {
+      return username;
+    }
+    public String getPassword() {
+      return password;
+    }
+    //encrypt methods
     public String encrypt(String s) {
         //runs all encrypt methods
         s = removeWhitespaceAndConvertToUpper(s);
@@ -54,8 +77,8 @@ public class UserInfo {
         //splits a string into 2 pieces and returns the halves swapped
         String firstHalf, secondHalf;
         
-        firstHalf = s.substring(0, s.length() + 1 / 2);
-        secondHalf = s.substring(s.length() + 1 / 2, s.length());
+        firstHalf = s.substring(0, (s.length() + 1) / 2);
+        secondHalf = s.substring((s.length() + 1) / 2, s.length());
         
         return secondHalf + firstHalf;
     }
@@ -72,10 +95,10 @@ public class UserInfo {
         String body1, body2, middle1, middle2;
         
             //checks for odd/even string lengths
-            body1 = s.substring(0, (s.length() + 1 / 2) - 2);
-            middle1 = s.substring((s.length() + 1 / 2) - 2, s.length() / 2);
-            middle2 = s.substring(s.length() + 1 / 2, (s.length() / 2) + 2);
-            body2 = s.substring((s.length() + 1 / 2) + 2, s.length());
+            body1 = s.substring(0, ((s.length() + 1) / 2) - 2);
+            middle1 = s.substring(((s.length() + 1) / 2) - 2, s.length() / 2);
+            middle2 = s.substring((s. length() + 1) / 2, (s.length() / 2) + 2);
+            body2 = s.substring(((s.length() + 1) / 2) + 2, s.length());
         
         return body1 + middle2 + middle1 + body2;
     }
