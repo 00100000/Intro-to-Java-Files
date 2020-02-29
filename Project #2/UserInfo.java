@@ -13,6 +13,9 @@ public class UserInfo {
         username = "";
         password = "";
     }
+    public String toString() {
+      return name + " " + address + " " + username + " " + password;
+    }
     //get and set methods
     public void setName(String n) {
       name = n;

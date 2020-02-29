@@ -13,11 +13,15 @@ public class UserInfoDriver {
         String n, a, u, p;
         UserInfo user = new UserInfo();
 
-        //user input
-        n = JOptionPane.showInputDialog("Please enter your name.");
-        a = JOptionPane.showInputDialog("Please enter your address.");
-        u = JOptionPane.showInputDialog("Please enter your username.");
-        p = JOptionPane.showInputDialog("Please enter your password.");
+        do {
+            //user input
+            n = JOptionPane.showInputDialog("Please enter your name.");
+            a = JOptionPane.showInputDialog("Please enter your address.");
+            u = JOptionPane.showInputDialog("Please enter your username.");
+            p = JOptionPane.showInputDialog("Please enter your password.");
+
+            //user-controlled exit
+        } while (JOptionPane.showConfirmDialog(null, "Would you like to exit?", null, JOptionPane.YES_NO_OPTION) == 1);
 
         //sets user information
         user.setName(n);
