@@ -1,5 +1,5 @@
 //
-// UserInfoDriver.java           Author: Aidan Din
+// UserInfo.java           Author: Aidan Din
 //
 // Encrypt methods and set and get methods.
 //
@@ -41,35 +41,35 @@ public class UserInfo {
     //encrypt methods
     public String encrypt(String s) {
         //runs all encrypt methods
-        s = removeWhitespaceAndConvertToUpper(s);
-        s = substitute(s);
-        s = swapHalfsForEncrypt(s);
-        s = swapFirst2WithLast2(s);
-        s = swapMiddleChars(s);
+        s = removeWhitespaceAndConvertToUpper(
+        substitute(
+        swapHalfsForEncrypt(
+        swapFirst2WithLast2(
+        swapMiddleChars(s)))));
         
         return s;
     }
     public String removeWhitespaceAndConvertToUpper(String s) {
         //removes trailing and leading whitespace
-        s = s.trim();
-        s = s.toUpperCase();
+        s = s.trim()
+        .toUpperCase();
         
         return s;
     }
     public String substitute(String s) {
         //replaces all necessary characters in the passcode
-        s = s.replace("A", "@");
-        s = s.replace("E", "=");
-        s = s.replace("I", "!");
-        s = s.replace("J", "?");
-        s = s.replace("O", "*");
-        s = s.replace("P", "#");
-        s = s.replace("R", "&");
-        s = s.replace("S", "$");
-        s = s.replace("T", "+");
-        s = s.replace("V", "^");
-        s = s.replace("X", "%");
-        s = s.replace(" ", "_");
+        s.replace("A", "@")
+        .replace("E", "=")
+        .replace("I", "!")
+        .replace("J", "?")
+        .replace("O", "*")
+        .replace("P", "#")
+        .replace("R", "&")
+        .replace("S", "$")
+        .replace("T", "+")
+        .replace("V", "^")
+        .replace("X", "%")
+        .replace(" ", "_");
         
         return s;
     }
