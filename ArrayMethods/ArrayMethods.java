@@ -3,13 +3,17 @@
 //
 // Encrypt methods and set and get methods.
 //
+
 import java.util.Scanner;
 
 public class ArrayMethods {
-  private static int len;
   
   public static void main (String[]args) {
-    Scanner scan = new Scanner(System.in);
+    int[] things = {3, 2, 1, 4, 5};
+    System.out.println(toString(reverseArray(things)));
+    System.out.println(smallestValue(things));
+    System.out.println(largestValue(things));
+    /*Scanner scan = new Scanner(System.in);
     
     do {
       // User interactions
@@ -24,8 +28,6 @@ public class ArrayMethods {
         System.out.println("Element " + i);
         elementArr[i] = scan.nextInt();
       }
-      
-      len = elementArr.length;
       
       // Method switches
       if (opt == 1) {
@@ -42,58 +44,56 @@ public class ArrayMethods {
       //User exit loop
       char exit;
       System.out.println("Would you like to run this program against? (y/n)");
-      do {
-        //Exception Handling
-        try {
-          exit = scan.next().charAt(0);
-        } catch (Exception e) {
-          System.out.println("Please enter either y or n");
-          exit = scan.next().charAt(0);
-        }
-      } while (!exit.equals(y || n));
-               
-    } while (exit.equals(y));
-  }
-    public static int[] reverseArray(int[] arr) {
-      int[] arr2 = new int[len];
-      int x = 0;
+      //Exception Handling
+      try {
+        exit = scan.next().charAt(0);
+      } catch (Exception e) {
+        System.out.println("Please enter either y or n");
+        exit = scan.next().charAt(0);
+      }
       
-      for (int i = len; i > 0; i--) {
+    } //while (exit.equals("y")); */
+  }
+  public static int[] reverseArray(int[] arr) {
+      int[] arr2 = new int[arr.length];
+      int x = -2;
+      
+      for (int i = arr.length; i > 0; i--) {
         x++;
-        arr2[i] = arr[x];
+        arr2[x] = arr[i];
       }
       
       return arr2;
-    }
-    public static int smallestValue(int[] arr) {
-      int min = arr[0];
-      
-      for (int i = len; i > 0; i--) {
-        if (min > arr[i]) {
-          min = arr[i];
-        }
-      }
-      
-      return min;
-    }
-    public static int largestValue(int[] arr) {
-            int max = 0;
-      
-      for (int i = 0; i < len; i++) {
-        if (arr[i] > max) {
-          max = arr[i];
-        }
-      }
-      
-      return max;
-    }
-    public static String toString(int[] arr) {
-      String ret = "";
-      
-      for (int i = 0; i < len; i++) {
-        ret += " ," + arr[i];
-      }
-      
-      return ret;
-    }
   }
+  public static int smallestValue(int[] arr) {
+    int min = arr[0];
+    
+    for (int i = 0; i < arr.length; i++) {
+      if (min > arr[i]) {
+        min = arr[i];
+      }
+    }
+    
+    return min;
+  }
+  public static int largestValue(int[] arr) {
+    int max = arr[0];
+    
+    for (int i = arr.length; i > 0; i--) {
+      if (max < arr[i]) {
+        max = arr[i];
+      }
+    }
+    
+    return max;
+  }
+  public static String toString(int[] arr) {
+    String ret = "";
+    
+    for (int i = 0; arr.length > i; i++) {
+      ret += " ," + arr[i];
+    }
+    
+    return ret;
+  }
+}
