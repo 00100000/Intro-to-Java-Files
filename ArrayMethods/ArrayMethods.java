@@ -1,7 +1,8 @@
 //
 // ArrayMethods.java           Author: Aidan Din
 //
-// Encrypt methods and set and get methods.
+// Reverses an array and finds the smallest and largest
+// elements in an array
 //
 
 import java.util.Scanner;
@@ -9,15 +10,16 @@ import java.util.Scanner;
 public class ArrayMethods {
   
   public static void main (String[]args) {
-    int[] things = {3, 2, 1, 4, 5};
+    /*int[] things = {3, 2, 1, 4, 5};
     System.out.println(toString(reverseArray(things)));
     System.out.println(smallestValue(things));
-    System.out.println(largestValue(things));
-    /*Scanner scan = new Scanner(System.in);
+    System.out.println(largestValue(things));*/
+    Scanner scan = new Scanner(System.in);
+    char exit;
     
     do {
       // User interactions
-      System.out.println("Which operation would you like to use?\n1. Reverse Array\n2.Smallest Value\n3. Largest Value");
+      System.out.println("Which operation would you like to use?\n1. Reverse Array\n2. Smallest Value\n3. Largest Value");
       int opt = scan.nextInt();
       System.out.println("How many elements would you like in your array?");
       int elements = scan.nextInt();
@@ -25,42 +27,34 @@ public class ArrayMethods {
         System.out.println("Please enter the elements of your array.");
       // Array element entering
       for (int i = 0; i < elements; i++) {
-        System.out.println("Element " + i);
+        System.out.println("Enter Element " + i + ":");
         elementArr[i] = scan.nextInt();
       }
       
-      // Method switches
+      // Method switches + original array output
+      System.out.println("You entered: " + toString(elementArr));
       if (opt == 1) {
-        System.out.println("Array Reversed: " + reverseArray(elementArr));
+        System.out.println("Array Reversed: " + toString(reverseArray(elementArr)));
       } else if (opt == 2) {
         System.out.println("Smallest Value: " + smallestValue(elementArr));
       } else if (opt == 3) {
         System.out.println("Largest Value: " + largestValue(elementArr));
-      } else {
-        System.out.println("Please enter a number between 1 to 3");
-        opt = scan.nextInt();
       }
       
       //User exit loop
-      char exit;
       System.out.println("Would you like to run this program against? (y/n)");
-      //Exception Handling
-      try {
-        exit = scan.next().charAt(0);
-      } catch (Exception e) {
-        System.out.println("Please enter either y or n");
-        exit = scan.next().charAt(0);
-      }
-      
-    } //while (exit.equals("y")); */
+      exit = scan.next().charAt(0);
+    } while (exit == 'y');
   }
   public static int[] reverseArray(int[] arr) {
       int[] arr2 = new int[arr.length];
-      int x = -2;
+      int x = 0;
       
-      for (int i = arr.length; i > 0; i--) {
+      arr2[0] = arr[arr.length - 1];
+      
+      for (int i = arr.length - 1; i > 0; i--) {
+        arr2[i] = arr[x];
         x++;
-        arr2[x] = arr[i];
       }
       
       return arr2;
@@ -79,7 +73,7 @@ public class ArrayMethods {
   public static int largestValue(int[] arr) {
     int max = arr[0];
     
-    for (int i = arr.length; i > 0; i--) {
+    for (int i = arr.length - 1; i > 0; i--) {
       if (max < arr[i]) {
         max = arr[i];
       }
@@ -91,7 +85,7 @@ public class ArrayMethods {
     String ret = "";
     
     for (int i = 0; arr.length > i; i++) {
-      ret += " ," + arr[i];
+      ret += arr[i] + " ";
     }
     
     return ret;
