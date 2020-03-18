@@ -1,7 +1,9 @@
-/* Author: Aidan Din    CozaLozaWoza.java
-*
-* Prints either "Coza," "Loza," or "Woza," in place of a number depending on if it's divisible by 3, 5, or 7. 11 Numbers per line
-*/
+//
+// Author: Aidan Din    CozaLozaWoza.java
+//
+// Prints either "Coza," "Loza," or "Woza," in place of a number depending on if it's
+// divisible by 3, 5, or 7. 11 Numbers per line
+//
 
 import javax.swing.JOptionPane;
 

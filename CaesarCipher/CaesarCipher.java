@@ -1,7 +1,8 @@
-/* CaesarCipher.java     Author: Aidan Din
-*
-* Encodes and decodes messages via the CaesarCipher
-*/
+//
+// CaesarCipher.java     Author: Aidan Din
+//
+// Encodes and decodes messages via the CaesarCipher
+//
 
 import java.util.Scanner; //imports the scanner utility
 

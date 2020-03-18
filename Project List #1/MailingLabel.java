@@ -1,7 +1,8 @@
-/* Author: Aidan Din    MailingLabel.java
-*
-*  Takes a delimiter and a message from a user and coverts it into a mailing label
-*/
+//
+// Author: Aidan Din    MailingLabel.java
+//
+// Takes a delimiter and a message from a user and coverts it into a mailing label
+//
 
 import javax.swing.JOptionPane;
 

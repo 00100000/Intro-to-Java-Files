@@ -1,9 +1,10 @@
-/* Methods.java     Author: Aidan Din
- *
- * Does different advanced mathematical functions with different methods
- */
+//
+// Methods.java     Author: Aidan Din
+//
+// Does different advanced mathematical functions with different methods
+//
 
-import java.util.Scanner; //imports the scanner class
+import java.util.Scanner;
 
 public class Methods
 {

@@ -1,7 +1,8 @@
-/* Author: Aidan Din    Zinnformatics.java
-*
-*  Calculates the prices and discounts for a web design software
-*/
+//
+// Author: Aidan Din    Zinnformatics.java
+//
+// Calculates the prices and discounts for a web design software
+//
 
 import javax.swing.JOptionPane;
 

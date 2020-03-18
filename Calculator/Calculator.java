@@ -1,6 +1,8 @@
-/* Calculator.java          Author: Aidan Din
- * Performs basic arithmetic operations
- */
+//
+// Calculator.java          Author: Aidan Din
+//
+// Performs basic arithmetic operations
+//
  
 import java.util.Scanner; //imports the scanner utility in Java
  
