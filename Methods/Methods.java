@@ -56,24 +56,12 @@ public class Methods
   }
   public static boolean hasMidpoint(int a, int b, int c) {
   // returns true if any of the numbers are midpoints
-    double aa = (double)a;
-    double bb = (double)b;
-    double cc = (double)c;
-
-    if ((aa + bb) / 2 == cc) {
-      return true;
-    } else if ((aa + cc) / 2 == bb) {
-      return true;
-    } else if ((bb + aa) / 2 == cc) {
-      return true;
-    } else if ((bb + cc) / 2 == aa) {
-      return true;
-    } else if ((cc + aa) / 2 == bb) {
-      return true;
-    } else if ((cc + bb) / 2 == aa) {
-      return true;
-    } else {
-      return false;
-    }
+    // Handy method for handling midpoints without
+    // using doubles
+    // Thanks PatheticMustan!
+    if (a + b == c + c) return true;
+    if (b + c == a + a) return true;
+    if (c + a == b + b) return true;
+    return false;
   }
 }
