@@ -3,10 +3,15 @@
 // players and k being the cycle amount
 
 class MathDDG {
-    public static void main (String[]args) {
-
+  public static void main (String[]args) {
+    System.out.println(playGame(342, 55));
+  }
+  static int playGame(final int n, final int k) {
+    if (n == 1) {
+      return 1;
+    } else {
+      //excellent recursive solution courtesy of GeeksforGeeks
+      return (playGame(n - 1, k) + k-1) % n + 1;
     }
-    static int playGame(final int n, final int k) {
-
-    }
+  }
 }
