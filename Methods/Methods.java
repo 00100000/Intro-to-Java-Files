@@ -9,13 +9,42 @@ import java.util.Scanner;
 public class Methods
 {
   public static void main (String[] args) {
-  
+    /* //testing
     System.out.println(factorial(5)); //120
     System.out.println(firstDigit(54832975)); //5
     System.out.println(allDigitsOdd(13579)); //true
     System.out.println(allDigitsSame(66666)); //true
     System.out.println(hasMidpoint(3, 5, 7)); //true
-  
+    */
+    //user interactions
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Please select a an operation to perform by selecting an operation's corresponding number." +
+    "1. Factorial\n2. First Digit\n3. All Digits Odd\n4. All Digits Same\n5. Midpoint of two numbers");
+    int operation = scan.nextInt();
+
+    System.out.println("Please enter a number to perform the operation on.");
+    int num = scan.nextInt();
+
+    // output handling
+    if (operation == 1) {
+      System.out.println(factorial(num));
+    } else if (operation == 2) {
+      System.out.println(firstDigit(num));
+    } else if (operation == 3) {
+      System.out.println(allDigitsOdd(num));
+    } else if (operation == 4) {
+      System.out.println(allDigitsSame(num));
+    }
+
+    //hasMidpoint output
+    if (operation == 5) {
+      System.out.println("Please enter a second number.");
+      int numTwo = scan.nextInt();
+      System.out.println("Please enter a third number.");
+      int numThree = scan.nextInt();
+      System.out.println(hasMidpoint(num, numTwo, numThree));
+    }
+    scan.close();
   }
   public static int factorial(int n) {
   // returns factorial
