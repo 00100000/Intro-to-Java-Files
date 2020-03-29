@@ -9,20 +9,29 @@ import javax.swing.JOptionPane;
 
 public class DuckDuckGoose {
 	public static void main (String[]args) {
-    boolean[] arr = {true, true, true, true, true, true, true, true};
+    boolean[] arr = {true, true, true, true, true,}; //3
     System.out.println(playGame(arr, 3));
   }
   public static int playGame(boolean[] array, int cycle) {
   // returns winner, accepts player amount and cycle length
-    return 1;
-  }
-  // recursive solution
-  /* static int playGame(final int n, final int k) {
-    if (n == 1) {
-      return 1;
-    } else {
-      //excellent recursive solution courtesy of GeeksforGeeks
-      return (playGame(n - 1, k) + k-1) % n + 1;
+    int cycleAmount = 0;
+    int ret = 0;
+
+    for (int i = 0; cycleAmount < array.length; i += cycle) {
+      //forgive me lord for these nested loops
+      while (array[i] == false) {
+        i++;
+      }
+      if (array[i] == true) {
+        array[i] = false;
+      }
     }
-  } */
+    
+    for (int x = 0; x < array.length; x++) {
+      if (array[x] == true) {
+        ret = x;
+      }
+    }
+    return ret;
+  }
 }
