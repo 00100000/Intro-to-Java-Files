@@ -4,7 +4,7 @@
 
 class MathDDG {
   public static void main (String[]args) {
-    System.out.println(playGame(342, 55));
+    System.out.println(playGame(9, 4));
   }
   static int playGame(final int n, final int k) {
     if (n == 1) {
