@@ -28,31 +28,23 @@ public class DuckDuckGoose {
 
   public static int playGame(boolean[] array, int cycle) {
     // returns winner, accepts player amount and cycle length
-    int position = 0;
     int ret = 0;
     int len = array.length;
-    // increments position by cycle, loop stop condition when cycles < array length
-    for (int i = 0; i < len; position += cycle) {
-      // keeps positon under array length
-      if (position > len - 1) {
-        position %= (len - 1);
+    int pointer = 0;
+
+    // iterates this loop enough times to remove all but 1 player
+    for (int x = 0; x < len - 1; x++) {
+      // skips over falses every cycle by ignoring them for i, but not for pointer
+      for (int i = cycle; i != 0; pointer++) {
+        pointer %= (len - 1);
+        if (array[pointer] == true) i--; pointer++;
+        if (array[pointer] == false) pointer++;
       }
-      if (array[position] == true) {
-        array[position] = false;
-      }
-      // skips over already eliminated players
-      while (array[position] == false) {
-        position++;
-        // keeps position under array length
-        if (position > len - 1) {
-          position %= (len - 1);
-        }
-      }
-      // cycle count increment
-      i++;
+      pointer %= (len - 1);
+      array[pointer] = false;
     }
-    // locates position of the surviving player
-    for (int x = 0; x < len; x++) {
+    // scans array for winner
+    for (int x = 0; x < len - 1; x++) {
       if (array[x] == true) {
         ret = x;
       }
