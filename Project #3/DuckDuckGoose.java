@@ -35,18 +35,16 @@ public class DuckDuckGoose {
     // iterates this loop enough times to remove all but 1 player
     for (int x = 0; x < len - 1; x++) {
       // skips over falses every cycle by ignoring them for i, but not for pointer
-      for (int i = cycle; i != 0; pointer++) {
-        pointer %= (len - 1);
-        if (array[pointer] == true) i--; pointer++;
-        if (array[pointer] == false) pointer++;
+      for (int i = 0; i < cycle; pointer++) {
+        // pointer % len prevents pointer from being higher than players
+        if (array[pointer % len] == true) i++;
+        if (i == cycle) array[pointer % len] = false;
       }
-      pointer %= (len - 1);
-      array[pointer] = false;
     }
     // scans array for winner
-    for (int x = 0; x < len - 1; x++) {
-      if (array[x] == true) {
-        ret = x;
+    for (int index = 0; index < len; index++) {
+      if (array[index] == true) {
+        ret = index;
       }
     }
     return ret;
