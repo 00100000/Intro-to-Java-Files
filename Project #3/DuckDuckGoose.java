@@ -37,8 +37,10 @@ public class DuckDuckGoose {
       // skips over falses every cycle by ignoring them for i, but not for pointer
       for (int i = 0; i < cycle; pointer++) {
         // pointer % len prevents pointer from being higher than players
-        if (array[pointer % len] == true) i++;
-        if (i == cycle) array[pointer % len] = false;
+        if (array[pointer % len] == true)
+          i++;
+        if (i == cycle)
+          array[pointer % len] = false;
       }
     }
     // scans array for winner

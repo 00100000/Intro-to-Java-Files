@@ -41,20 +41,20 @@ public class ArrayMethods {
         System.out.println("Largest Value: " + largestValue(elementArr));
       }
       
-      //User exit loop
+      // User exit loop
       System.out.println("Would you like to run this program against? (y/n)");
       exit = scan.next().charAt(0);
     } while (exit == 'y');
     scan.close();
   }
   public static int[] reverseArray(int[] arr) {
-      //new array declarations
+      // new array declarations
       int[] arr2 = new int[arr.length];
       int x = 0;
       
       arr2[0] = arr[arr.length - 1];
       
-      //reverse index new array
+      // reverse index new array
       for (int i = arr.length - 1; i > 0; i--) {
         arr2[i] = arr[x];
         x++;
@@ -65,7 +65,7 @@ public class ArrayMethods {
   public static int smallestValue(int[] arr) {
     int min = arr[0];
     
-    //check array for smallest value
+    // check array for smallest value
     for (int i = 0; i < arr.length; i++) {
       if (min > arr[i]) {
         min = arr[i];
@@ -77,7 +77,7 @@ public class ArrayMethods {
   public static int largestValue(int[] arr) {
     int max = arr[0];
     
-    //check array for largest value
+    // check array for largest value
     for (int i = arr.length - 1; i > 0; i--) {
       if (max < arr[i]) {
         max = arr[i];
@@ -89,7 +89,7 @@ public class ArrayMethods {
   public static String toString(int[] arr) {
     String ret = "";
     
-    //convert array into String
+    // convert array into String
     for (int i = 0; arr.length > i; i++) {
       ret += arr[i] + " ";
     }
