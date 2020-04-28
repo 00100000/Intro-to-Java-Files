@@ -5,27 +5,24 @@
 //
 
 public class SquareMatrix {
-    public static int n;
-    public static int[] elements;
-    private static int[] matrix = () -> {
+    public int[][] createArr(int n, int[] elements) {
         // translates an Array to a 2d Array
-        int[] tempMatrix = new int[n][n];
+        int[][] matrix =  new int[n][n];
         int trueX = 0;
         for (int i = 0; i < n; i++) {
             for (int x = 0; x < n; x++) {
                 trueX++;
-                temoMatrix[i][x] = elements[trueX];
+                matrix[i][x] = elements[trueX];
             }
         }
-        return tempMatrix;
-    };
+        return matrix;
+    }
 
-    static String twoDToString(int[] arr) {
+    static String twoDToString(int[][] arr) {
         // translates a 2d Array to a String
-        String ret = "";
         for (int i = 0; i < n; i++) {
             for (int x = 0; x < n; x++) {
-                ret += " " + matrix[i][x];
+                ret += " " + arr[i][x];
             }
             ret += "\n";
         }
@@ -34,7 +31,6 @@ public class SquareMatrix {
 
     public void add(int i, int row, int column) {
         // "sets" a new value for any element in the matrix
-        matrix[row][column] = i;
     }
 
     public boolean isMagic() {
