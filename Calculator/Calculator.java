@@ -11,8 +11,8 @@ public class Calculator
   public static void main (String[] args)
  {
     //program information
-    System.out.prdoubleln("1 = Addition\n2 = Subtraction\n3 = Multiplication\n4 = Division\n5 = Absolute Value");
-    System.out.prdoubleln("Enter the number for the corresponding operation to select which operation you'd like to do.");
+    System.out.println("1 = Addition\n2 = Subtraction\n3 = Multiplication\n4 = Division\n5 = Absolute Value");
+    System.out.println("Enter the number for the corresponding operation to select which operation you'd like to do.");
     double firstNum, secondNum;
 
     //user interactions
@@ -27,7 +27,7 @@ public class Calculator
       secondNum = 0;
     }
     // final answer
-    System.out.prdoubleln(calc(firstNum, secondNum, operation));
+    System.out.println(calc(firstNum, secondNum, operation));
     scan.close();
   }
   static double calc(double x, double y, int operation) {
