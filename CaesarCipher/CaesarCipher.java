@@ -48,34 +48,25 @@ public class CaesarCipher {
   }
 
   public static String encode(String str, int Shift) {
-    int ascii = 0;
-    String finalMessage = "";
+      char[] arr = str.toCharArray();
+      Shift %= 26;
 
-    String strUpper = str.toUpperCase();
-    int messageLength = strUpper.length() - 1;
+      for (int i = 0; i < arr.length; i++) {
+        if (Character.isLetter(arr[i])) {
+          int trueShift = (int)arr[i] + Shift;
 
-    for (int index = 0; index <= messageLength; index++) {
-      char messageChar = strUpper.charAt(index);
-      // isolating shift for handling shift above 26
-      ascii = ((messageChar - 'A') + Shift) % 26 + 'A';
-      finalMessage += (char) (ascii);
+          if (trueShift > 90) {
+            trueShift -= 26;
+          } else if (trueShift < 65) {
+            trueShift += 26;
+          }
+
+          arr[i] = (char)trueShift;
+        }
+      }
+      return String.valueOf(arr);
     }
-    return finalMessage;
-  }
-
-  public static String decode(String str, int Shift) {
-    int ascii = 0;
-    String finalMessage = "";
-
-    String strUpper = str.toUpperCase();
-    int messageLength = strUpper.length() - 1;
-
-    for (int index = 0; index <= messageLength; index++) {
-      char messageChar = strUpper.charAt(index);
-      // isolating shift for handling shift above 26
-      ascii = ((messageChar - 'Z') - Shift) % 26 + 'Z';
-      finalMessage += (char) (ascii);
+    public static String decode(String str, int Shift) {
+      return encode(str, -Shift);
     }
-    return finalMessage;
-  }
 }
