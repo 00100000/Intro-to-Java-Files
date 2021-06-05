@@ -4,14 +4,14 @@
 // Encodes and decodes messages via the CaesarCipher
 //
 
-import java.util.Scanner; //imports the scanner utility
+import java.util.Scanner;
 
 public class CaesarCipher {
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
     // User interactions
     System.out.println("Please enter the message (All lowercase characters will be converted to uppercase)");
-    String msg = scan.nextLine();
+    String msg = scan.nextLine().toUpperCase();
     System.out.println(
         "Would you like to encode or decode the message? (Not case sensitive. Enter either encode or decode.)");
     String code = scan.nextLine();
@@ -45,30 +45,26 @@ public class CaesarCipher {
 
       System.out.println(decode(msg, shiftAmount));
     }
+    scan.close();
   }
 
   public static String encode(String str, int Shift) {
       char[] arr = str.toCharArray();
-      // handle shift over 26
       Shift %= 26;
     
-      // loop through character array
       for (int i = 0; i < arr.length; i++) {
         if (Character.isLetter(arr[i])) {
           int trueShift = (int)arr[i] + Shift;
-
+          // handle shift overflow
           if (trueShift > 90) {
-            // handle shift overflow
             trueShift -= 26;
           } else if (trueShift < 65) {
-            // handle shift overflow on negatives (for decode)
             trueShift += 26;
           }
           // add the processed Shift
           arr[i] = (char)trueShift;
         }
       }
-      // convert char array to String
       return String.valueOf(arr);
     }
     public static String decode(String str, int Shift) {
